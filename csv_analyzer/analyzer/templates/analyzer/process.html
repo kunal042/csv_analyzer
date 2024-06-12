@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process CSV File</title>
+</head>
+<body>
+
+    
+    <h1>CSV File Analysis</h1>
+    <h2>First Few Rows</h2>
+    {{ head|safe }}
+    <h2>Summary Statistics</h2>
+    {{ description|safe }}
+    <h2>Plots</h2>
+    {% for plot in plots %}
+        <img src="data:image/png;base64,{{ plot }}" alt="Plot">
+    {% endfor %}
+    
+</body>
+</html>
