@@ -7,17 +7,24 @@
 
 {% block content %}
 
-<div>
+<div class="process" >
     
-    <h1>CSV File Analysis</h1>
-    <h2>First Few Rows</h2>
-    {{ head|safe }}
-    <h2>Summary Statistics</h2>
-    {{ description|safe }}
-    <h2>Plots</h2>
-    {% for plot in plots %}
-        <img src="data:image/png;base64,{{ plot }}" alt="Plot">
-    {% endfor %}
+    <h1 class="heading" >CSV File Analysis</h1>
+    <h2 class="first-row" >First Few Rows</h2>
+    <div class="head" >
+
+            {{ head|safe }}
+
+    </div>
+        
+    <h2 class="first-row" >Summary Statistics</h2>
+            {{ description|safe }}
+    <h2 class="first-row" >Plots</h2>
+    <div class="img-histo">
+        {% for plot in plots %}
+            <img src="data:image/png;base64,{{ plot }}" alt="Plot"  class="histogram">
+        {% endfor %}
+</div>
 </div>
 
 {% endblock %}

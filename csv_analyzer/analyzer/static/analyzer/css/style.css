@@ -13,16 +13,39 @@
     color: black;
 }
 
-.conatiner{
-    background-color: #732a2a;
+
+/* Upload Page */
+
+.container{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+}
+.container label{
+    color: #732a2a;
+    font-size: 20px;
+    font-weight: 600;
 }
 
-.conatiner h1{
-    text-align: center;
-    font-size: 24px;
+.container input{
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.btn{
+    background: aqua;
+    padding: 8px;
+    height: 5vh;
+    width: 30vw;
+    font-size: 18px;
+    font-weight: 600;
+}
+.btn:hover{
+    background:rgb(130, 214, 214);
+    cursor: pointer;
+    transition: 1sec ease-in-out;
 }
 
 /*
@@ -72,3 +95,50 @@ Conatact Page
     color: #0056b3;
 }
 
+
+/* process html */
+.process{
+   display: flex;
+   flex-direction: column;
+   margin: 10px 40px;
+
+
+}
+.heading{
+    background: #007BFF;
+    padding: 15px;
+    margin: 10px 10px ;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.first-row{
+    background-color: bisque;
+    color: #732a2a;
+    margin: 10px 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.head{
+    background-color: #fff;
+    color: #732a2a;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.process thead tr{
+    text-align: center;
+    align-items: center;
+}
+.img-histo{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.histogram{
+    width: 500px;
+    height: 500px;
+    
+}

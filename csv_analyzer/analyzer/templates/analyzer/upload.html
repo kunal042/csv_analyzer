@@ -10,12 +10,15 @@
     <h1 class="heading" >Upload CSV File</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div>
+        <div class="file-upload">
             {{ form.as_p }}
         </div>
        
         <button type="submit" class="btn">Upload</button>
     </form>
 </div>
+
+
+
 {% endblock %}
 

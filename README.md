@@ -1,5 +1,12 @@
 # Django CSV Analyzer
 
+## Important :
+
+To see the data first download and aslo attach the csv file to upload it.
+
+link : https://drive.google.com/drive/folders/1FYfGvxfAHXRJU0KHmtbRC8c4g8VDbicJ?usp=sharing 
+
+
 ## Description
 
 Django CSV Analyzer is a web application that allows users to upload CSV files, perform data analysis using pandas and numpy, and display the results and visualizations on the web interface. The project leverages Django for the backend, pandas for data processing, and matplotlib and seaborn for visualizations.
@@ -14,16 +21,10 @@ Django CSV Analyzer is a web application that allows users to upload CSV files, 
 
 ## Prerequisites
 
-- Python 3.x
-- Django 3.x or later
+- Python 
+- Django 
 - pandas
 - numpy
 - matplotlib
 - seaborn
 
-## Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone <repository_url>
-   cd csv_analyzer```
