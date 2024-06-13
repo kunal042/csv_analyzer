@@ -23,23 +23,40 @@ def upload_file(request):
     return render(request, 'analyzer/upload.html', {'form': form})
 
 
+
+
+def contact(request):
+    return render(request, 'analyzer/contact.html')
+
+
+
+
+
+
+
 def process_file(request, pk):
     csv_file = CSVFile.objects.get(pk=pk)
     file_path = os.path.join(settings.MEDIA_ROOT, csv_file.file.name)
     data = pd.read_csv(file_path)
 
-    
     head = data.head().to_html()
     description = data.describe().to_html()
 
     
+    stats = {}
+    for column in data.select_dtypes(include=['float64', 'int64']).columns:
+        stats[column] = {
+            'mean': int(data[column].mean()),
+            'median': int(data[column].median()),
+            'std': int(data[column].std())
+        }
+
     plots = []
     for column in data.select_dtypes(include=['float64', 'int64']).columns:
         plt.figure()
         sns.histplot(data[column].dropna())
         plt.title(f'Histogram of {column}')
 
-        
         buffer = io.BytesIO()
         plt.savefig(buffer, format='png')
         buffer.seek(0)
@@ -53,9 +70,7 @@ def process_file(request, pk):
         'description': description,
         'file': csv_file,
         'plots': plots,
+        'stats': stats,  
     }
+    
     return render(request, 'analyzer/process.html', context)
-
-
-def contact(request):
-    return render(request, 'analyzer/contact.html')
