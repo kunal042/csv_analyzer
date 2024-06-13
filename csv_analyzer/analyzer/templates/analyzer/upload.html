@@ -6,13 +6,16 @@
 
 
 {% block content %}
-      
-    <h1>Upload CSV File</h1>
+<div class="container">  
+    <h1 class="heading" >Upload CSV File</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
+        <div>
+            {{ form.as_p }}
+        </div>
+       
+        <button type="submit" class="btn">Upload</button>
     </form>
-
+</div>
 {% endblock %}
 

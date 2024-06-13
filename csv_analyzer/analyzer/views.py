@@ -90,3 +90,6 @@ def process_file(request, pk):
     }
     return render(request, 'analyzer/process.html', context)
 
+
+def contact(request):
+    return render(request, 'analyzer/contact.html')
